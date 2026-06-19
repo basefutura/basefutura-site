@@ -31,78 +31,8 @@
                     </div>
 
                     <!-- Desktop navigation -->
-                    <nav class="hidden md:flex md:grow">
 
-                        <!-- Desktop menu links -->
-                        <ul class="text-sm flex grow justify-center flex-wrap items-center gap-4 lg:gap-8">
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="pricing.html">Pricing</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="customers.html">Customers</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="blog.html">Blog</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="documentation.html">Docs</a>
-                            </li>
-                            <!-- 1st level: hover -->
-                            <li
-                                class="relative flex items-center gap-0.5 px-3 py-1"
-                                x-data="{ open: false }"
-                                @mouseenter="open = true"
-                                @mouseleave="open = false"
-                            >
-                                <span
-                                    class="text-gray-700 hover:text-gray-900 flex items-center cursor-pointer transition"
-                                    aria-haspopup="true"
-                                    :aria-expanded="open"
-                                >Extra</span>
-                                <button
-                                    class="shrink-0 p-1"
-                                    :aria-expanded="open"
-                                    @click.prevent="open = !open"
-                                >
-                                    <span class="sr-only">Show submenu for "Extra"</span>
-                                    <svg class="fill-gray-400" xmlns="http://www.w3.org/2000/svg" width="10" height="6">
-                                        <path d="m1.06.19 3.5 3.5 3.5-3.5 1.061 1.06-4.56 4.56L0 1.25 1.06.19Z" />
-                                    </svg>
-                                </button>
-                                <!-- 2nd level: hover -->
-                                <ul
-                                    class="origin-top-left absolute top-full left-0 w-36 bg-white p-2 rounded-xl shadow-lg shadow-black/[0.03] border border-gray-100"
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out transform"
-                                    x-transition:enter-start="opacity-0 -translate-y-2"
-                                    x-transition:enter-end="opacity-100 scale-100"
-                                    x-transition:leave="transition ease-out"
-                                    x-transition:leave-start="opacity-100"
-                                    x-transition:leave-end="opacity-0"
-                                    x-cloak
-                                    @focusout="await $nextTick();!$el.contains($focus.focused()) && (open = false)"
-                                >
-                                    <li>
-                                        <a class="text-sm text-gray-700 hover:bg-gray-100 flex py-1.5 px-2 rounded-lg" href="support.html">Support center</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-sm text-gray-700 hover:bg-gray-100 flex py-1.5 px-2 rounded-lg" href="apps.html">Apps</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </nav>
-
-                    <!-- Desktop sign in links -->
-                    <ul class="flex-1 flex justify-end items-center gap-3">
-                        <li>
-                            <a class="btn-sm text-gray-800 bg-white hover:bg-gray-50 shadow-sm" href="signin.html">Login</a>
-                        </li>
-                        <li>
-                            <a class="btn-sm text-gray-200 bg-gray-800 hover:bg-gray-900 shadow-sm" href="signup.html">Register</a>
-                        </li>
-                    </ul>                    
+                    <!-- Desktop sign in links -->              
                     
                     <!-- Mobile menu -->
                     <div class="flex md:hidden" x-data="{ expanded: false }">
@@ -198,11 +128,11 @@
                             </h1>
                             
                             <div class="max-w-3xl mx-auto">
-                                <p class="text-lg text-gray-500 mb-8" data-aos="zoom-y-out" data-aos-delay="300">
+                                <!-- <p class="text-lg text-gray-500 mb-8" data-aos="zoom-y-out" data-aos-delay="300">
                                     We Deliver<br /> High-Performance Cloud Infrastructure Engineering and Advanced, Cloud-Native Test Automation Framework Development.
-                                </p>
+                                </p> -->
                                 <p class="text-lg text-gray-500 mb-8" data-aos="zoom-y-out" data-aos-delay="300">    
-                                    We Empower<br /> Enterprises To Move Toward The Future With Reliable, Continuous, And Fully Autonomous Delivery Pipelines.
+                                    We Empower Enterprises<br /> To Move Toward The Future<br /> With Reliable, Continuous, And Fully Autonomous Delivery Pipelines.
                                 </p>
                                 <div class="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                                     <div class="relative max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="450">
@@ -224,10 +154,18 @@
                                     <span class="text-white font-medium text-[13px]">BaseFutura.com</span>
                                 </div>
                                 <div class="text-gray-500 text-sm font-mono [&_span]:opacity-0">
+                                    <span class="block animate-[code-1_17s_infinite]">[INFO] Initiating 'Base Futura' deployment orchestration...</span><br />
+                                    <span class="block text-gray-200 animate-[code-2_17s_infinite]">$ basefutura-engine --optimize --production</span><br />
+                                    <span class="block animate-[code-3_17s_infinite]">[SUCCESS] Build verified. 0 vulnerabilities, 100% compliance met.<br />[SUCCESS] Continuous integration: Automated validation suites PASSED.</span>
+                                    <span class="block animate-[code-4_17s_infinite]">[DEPLOY] Shifting workloads seamlessly to production cloud...</span><br />
+                                    <span class="block text-gray-200 animate-[code-5_17s_infinite]">$ terraform apply -auto-approve && kubectl apply -f ./cloud-native/</span>
+                                    <span class="block animate-[code-6_17s_infinite]">[SUCCESS] Global delivery complete. Pipelines stable. Systems nominal.<br /><br />URL: https://basefutura.com 🚀 (Scaled for the future)</span>
+                                    <!-- 
                                     <span class="text-gray-200 animate-[code-1_10s_infinite]">npm login</span> <span class="animate-[code-2_10s_infinite]">--registry=https://npm.pkg.github.com</span><br />
                                     <span class="animate-[code-3_10s_infinite]">--scope=@phanatic</span> <span class="animate-[code-4_10s_infinite]">Successfully logged-in.</span><br /><br />
                                     <span class="text-gray-200 animate-[code-5_10s_infinite]">npm publish</span><br />
                                     <span class="animate-[code-6_10s_infinite]">Package published.</span>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -684,7 +622,9 @@
                 </div>
             </section>
 
+           
             <!-- Large testimonial -->
+            <!--
             <section>
                 <div class="max-w-2xl mx-auto px-4 sm:px-6">
                     <div class="py-12 md:py-20">
@@ -703,7 +643,7 @@
                     </div>
                 </div>
             </section>
-
+            -->
             <!-- Features -->
             <section class="relative before:absolute before:inset-0 before:bg-gray-900 before:-z-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -711,7 +651,7 @@
 
                         <!-- Section header -->
                         <div class="max-w-3xl mx-auto text-center pb-16 md:pb-20">
-                            <h2 class="text-3xl md:text-4xl font-bold text-gray-200">Simple helps your teams work more efficiently together</h2>
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-200">Base Futura helps your teams work more efficiently together</h2>
                         </div>
 
                         <!-- Planet -->
@@ -739,18 +679,18 @@
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2-4a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4Zm1 10a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5Z" />
                                       </svg>
-                                      <span>Instant Analytics</span>
+                                      <span>Infrastructure as Code (IaC)</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Manage your infrastructure exactly like application code. Provision and scale cloud environments instantly using version-controlled repository workflows.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="M14.29 2.614a1 1 0 0 0-1.58-1.228L6.407 9.492l-3.199-3.2a1 1 0 1 0-1.414 1.415l4 4a1 1 0 0 0 1.496-.093l7-9ZM1 14a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H1Z" />
                                       </svg>
-                                      <span>Metadata</span>
+                                      <span>Autonomous Pipelines</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Remove manual steps from your development cycle. Code commits automatically, fast compilation, security testing gates, and zero-downtime rollouts.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
@@ -758,36 +698,36 @@
                                             <path d="M2.248 6.285a1 1 0 0 1-1.916-.57A8.014 8.014 0 0 1 5.715.332a1 1 0 0 1 .57 1.916 6.014 6.014 0 0 0-4.037 4.037Z" opacity=".3" />
                                             <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm1.715-6.752a1 1 0 0 1 .57-1.916 8.014 8.014 0 0 1 5.383 5.383 1 1 0 1 1-1.916.57 6.014 6.014 0 0 0-4.037-4.037Zm4.037 7.467a1 1 0 1 1 1.916.57 8.014 8.014 0 0 1-5.383 5.383 1 1 0 1 1-.57-1.916 6.014 6.014 0 0 0 4.037-4.037Zm-7.467 4.037a1 1 0 1 1-.57 1.916 8.014 8.014 0 0 1-5.383-5.383 1 1 0 1 1 1.916-.57 6.014 6.014 0 0 0 4.037 4.037Z" />
                                       </svg>
-                                      <span>SEO &amp; Performance</span>
+                                      <span>Advanced Test Automation</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Build resilient, cloud-native automated testing frameworks. Standardize your QA ecosystem with stable, self-healing end-to-end regression suites.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="M8 0a1 1 0 0 1 1 1v14a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1Zm6 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1a1 1 0 1 1 0 2h-1a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h1a1 1 0 1 1 0 2h-1ZM1 1a1 1 0 0 0 0 2h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 1 0 0 2h1a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H1Z" />
                                       </svg>
-                                      <span>Custom Code</span>
+                                      <span>Parallel Test Matrixing</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Accelerate engineering feedback loops. Distribute heavy integration and UI test matrices across parallel cloud workers to finish testing in seconds.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="M10.284.33a1 1 0 1 0-.574 1.917 6.049 6.049 0 0 1 2.417 1.395A1 1 0 0 0 13.5 2.188 8.034 8.034 0 0 0 10.284.33ZM6.288 2.248A1 1 0 0 0 5.718.33 8.036 8.036 0 0 0 2.5 2.187a1 1 0 0 0 1.372 1.455 6.036 6.036 0 0 1 2.415-1.395ZM1.42 5.401a1 1 0 0 1 .742 1.204 6.025 6.025 0 0 0 0 2.79 1 1 0 0 1-1.946.462 8.026 8.026 0 0 1 0-3.714A1 1 0 0 1 1.421 5.4Zm2.452 6.957A1 1 0 0 0 2.5 13.812a8.036 8.036 0 0 0 3.216 1.857 1 1 0 0 0 .574-1.916 6.044 6.044 0 0 1-2.417-1.395Zm9.668.04a1 1 0 0 1-.041 1.414 8.033 8.033 0 0 1-3.217 1.857 1 1 0 1 1-.571-1.917 6.035 6.035 0 0 0 2.415-1.395 1 1 0 0 1 1.414.042Zm2.242-6.255a1 1 0 1 0-1.946.462 6.03 6.03 0 0 1 0 2.79 1 1 0 1 0 1.946.462 8.022 8.022 0 0 0 0-3.714Z" />
                                       </svg>
-                                      <span>Localization</span>
+                                      <span>Multi-Cloud Orchestration</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Prevent vendor lock-in across cloud providers. Bridge deployment topologies seamlessly with unified control metrics and automated global failovers.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="M9 1a1 1 0 1 0-2 0v6a1 1 0 0 0 2 0V1ZM4.572 3.08a1 1 0 0 0-1.144-1.64A7.987 7.987 0 0 0 0 8a8 8 0 0 0 16 0c0-2.72-1.36-5.117-3.428-6.56a1 1 0 1 0-1.144 1.64A5.987 5.987 0 0 1 14 8 6 6 0 1 1 2 8a5.987 5.987 0 0 1 2.572-4.92Z" />
                                       </svg>
-                                      <span>Canonical URL</span>
+                                      <span>Quality & Observability Dashboards</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-400">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-400">Keep your development and QA teams perfectly aligned. Track real-time test execution health, flake rates, and deployment readiness on a single canvas.</p>
                             </article>                                                                                                                                            
                         </div>
 
@@ -806,37 +746,10 @@
                         <!-- Section header -->
                         <div class="max-w-3xl mx-auto text-center pb-24 md:pb-28">
                             <h2 class="text-3xl md:text-4xl font-bold mb-4">Identify value much faster</h2>
-                            <p class="text-lg text-gray-700">Use powerful yet familiar tools to create your ultimate continuous integration environments. Zero Hustle Deployments.</p>
+                            <p class="text-lg text-gray-700">We use powerful yet familiar tools to create your ultimate continuous integration environments. Zero Hustle Deployments.</p>
                         </div>
 
                         <!-- Illustration -->
-                        <div class="group relative w-full max-w-[500px] mx-auto flex justify-center mb-32 md:mb-36" data-aos="zoom-y-out">
-                            <div class="absolute bottom-0 -z-10" aria-hidden="true">
-                                <div class="w-80 h-80 rounded-full bg-blue-500 opacity-70 blur-[160px] will-change-[filter]"></div>
-                            </div>
-                            <div class="w-full aspect-video bg-gray-900 rounded-2xl px-5 py-3 shadow-xl -rotate-1 group-hover:-rotate-0 transition duration-300">
-                                <div class="relative flex items-center justify-between before:block before:w-[41px] before:h-[9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] before:bg-[length:16px_9px] after:w-[41px] mb-8">
-                                    <span class="text-white font-medium text-[13px]">AI Project</span>
-                                </div>
-                                <div class="text-gray-500 font-mono [&_span]:opacity-0 text-sm blur-xs will-change-[filter] group-hover:blur-none transition duration-300">
-                                    <span class="text-gray-200 animate-[code-1_10s_infinite]">npm login</span> <span class="animate-[code-2_10s_infinite]">--registry=https://npm.pkg.github.com</span><br>
-                                    <span class="animate-[code-3_10s_infinite]">--scope=@phanatic</span> <span class="animate-[code-4_10s_infinite]">Successfully logged-in.</span><br><br>
-                                    <span class="text-gray-200 animate-[code-5_10s_infinite]">npm publish</span><br>
-                                    <span class="animate-[code-6_10s_infinite]">Package published.</span>
-                                </div>
-                            </div>
-                            <div class="absolute top-16">
-                                <div class="translate-y-2 group-hover:opacity-0 group-hover:translate-y-0 transition duration-300 pointer-events-none mb-[7%]">
-                                    <img class="-rotate-2" src="./images/features-02-overlay-01.png" width="500" height="72" alt="Overlay 01">
-                                </div>
-                                <div class="translate-y-2 group-hover:opacity-0 group-hover:translate-y-0 transition duration-300 delay-50 pointer-events-none mb-[3.5%]">
-                                    <img src="./images/features-02-overlay-02.png" width="500" height="40" alt="Overlay 02">
-                                </div>
-                                <div class="translate-y-2 group-hover:opacity-0 group-hover:translate-y-0 transition duration-300 delay-100 pointer-events-none">
-                                    <img class="-rotate-1" src="./images/features-02-overlay-03.png" width="500" height="91" alt="Overlay 03">
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Grid -->
                         <div class="grid lg:grid-cols-3 overflow-hidden border-y [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1] *:p-6 md:*:px-10 md:*:py-12 *:relative *:before:absolute *:before:bg-linear-to-b *:before:from-transparent *:before:via-gray-200 *:before:[block-size:100%] *:before:[inline-size:1px] *:before:[inset-inline-start:-1px] *:before:[inset-block-start:0]">
@@ -845,27 +758,27 @@
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                         <path d="m15.447 6.605-.673-.336a6.973 6.973 0 0 0-.761-1.834l.238-.715a.999.999 0 0 0-.242-1.023l-.707-.707a.995.995 0 0 0-1.023-.242l-.715.238a6.96 6.96 0 0 0-1.834-.761L9.394.552A1 1 0 0 0 8.5-.001h-1c-.379 0-.725.214-.895.553l-.336.673a6.973 6.973 0 0 0-1.834.761l-.715-.238a.997.997 0 0 0-1.023.242l-.707.707a1.001 1.001 0 0 0-.242 1.023l.238.715a6.959 6.959 0 0 0-.761 1.834l-.673.336a1 1 0 0 0-.553.895v1c0 .379.214.725.553.895l.673.336c.167.653.425 1.268.761 1.834l-.238.715a.999.999 0 0 0 .242 1.023l.707.707a.997.997 0 0 0 1.023.242l.715-.238a6.959 6.959 0 0 0 1.834.761l.336.673a1 1 0 0 0 .895.553h1c.379 0 .725-.214.895-.553l.336-.673a6.973 6.973 0 0 0 1.834-.761l.715.238a1.001 1.001 0 0 0 1.023-.242l.707-.707c.268-.268.361-.664.242-1.023l-.238-.715a6.959 6.959 0 0 0 .761-1.834l.673-.336A1 1 0 0 0 16 8.5v-1c0-.379-.214-.725-.553-.895ZM8 13a5 5 0 1 1 .001-10.001 5 5 0 0 1 0 10.001Z" />
                                       </svg>
-                                      <span>Optimization</span>
+                                      <span>Infrastructure ROI</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-700">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-700">Gain complete financial transparency over your cloud spending. Analyze cluster idle times and resource over-provisioning to eliminate waste and maximize your DevOps budget efficiency.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="12">
                                         <path d="M2 0a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2H2Zm0 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7Zm1-3a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H3Z" />
                                       </svg>
-                                      <span>Cookie Banner</span>
+                                      <span>Flake-Rate Reduction</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-700">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-700">Surface and isolate unstable, intermittent automated test failures before they block your release pipeline. Turn unpredictable regression suites into reliable, high-confidence quality gates.</p>
                             </article>
                             <article>
                                 <h3 class="font-medium flex items-center space-x-2 mb-2">
                                     <svg class="fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                                             <path d="M14.75 2.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Zm0 13.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM2.5 14.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0ZM1.25 2.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm4-6a6 6 0 1 0 0 12A6 6 0 0 0 8 2Z" />
                                       </svg>
-                                      <span>Custom Domain</span>
+                                      <span>Time-to-Market Metrics</span>
                                 </h3>
-                                <p class="text-[15px] text-gray-700">Collect essential insights about how visitors are using your site with in-depth page view metrics like pages, referring sites, and more.</p>
+                                <p class="text-[15px] text-gray-700">Track precise engineering velocity analytics from code commit to production deployment. Identify internal friction points, pipeline bottlenecks, and environment provisioning delays instantly.</p>
                             </article>
                         </div>                        
 
@@ -874,124 +787,8 @@
             </section>
 
             <!-- Testimonials -->
-            <section class="relative before:absolute before:inset-0 before:h-[120%] before:pointer-events-none before:bg-linear-to-b before:from-gray-100 before:-z-10">            
-                <div class="pt-12 md:pt-20">
-                    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                        <div class="max-w-3xl mx-auto text-center">
-                            <h2 class="text-3xl md:text-4xl font-bold">Top Startups love Base Futura</h2>
-                        </div>
-                    </div>
-                    <div class="relative flex justify-center max-w-[94rem] mx-auto">
-                        <div class="absolute bottom-20 -translate-x-36 -z-10" aria-hidden="true">
-                            <div class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]"></div>
-                        </div>
-                        <div class="absolute -bottom-10 -z-10" aria-hidden="true">
-                            <div class="w-80 h-80 rounded-full bg-blue-500 opacity-40 blur-[160px] will-change-[filter]"></div>
-                        </div>                        
-                        <div class="absolute bottom-0 -z-10" aria-hidden="true">
-                            <div class="w-56 h-56 rounded-full border-[20px] border-white blur-[20px] will-change-[filter]"></div>
-                        </div>
-                        <!-- Row -->
-                        <div
-                            x-data="{}"
-                            x-init="$nextTick(() => {
-                                let ul = $refs.testimonials;
-                                ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                                ul.nextSibling.setAttribute('aria-hidden', 'true');
-                            })"
-                            class="w-full inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)] py-12 md:py-20 group"
-                        >                       
-                            <div x-ref="testimonials" class="flex items-start justify-center md:justify-start *:mx-3 animate-[infinite-scroll_60s_linear_infinite] group-hover:[animation-play-state:paused]">
-                                <!-- Item #1 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-01.jpg" width="44" height="44" alt="Testimonial 01" />
-                                        <div>
-                                            <div class="font-bold">Peter Lowe</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@peterlowex</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        As a founder, having a visually appealing and user-friendly website is essential. This tool not only helped me achieve that but also improved my site's performance and SEO.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">May 19, 2027</div>
-                                    </footer>
-                                </article>
-                                <!-- Item #2 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-02.jpg" width="44" height="44" alt="Testimonial 02" />
-                                        <div>
-                                            <div class="font-bold">Rodri Alba</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@rodri_spn</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        Simple has revolutionized the way I manage my work. Its intuitive interface and seamless functionality make staying organized effortless. I can't imagine my life without it.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Apr 12, 2027</div>
-                                    </footer>                                    
-                                </article>
-                                <!-- Item #3 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-03.jpg" width="44" height="44" alt="Testimonial 03" />
-                                        <div>
-                                            <div class="font-bold">Michele Lex</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@MikyBrown</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        I've tried several website builders before, but none were as user-friendly and versatile as this one. From design to functionality, it exceeded my expectations!
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Mar 04, 2027</div>
-                                    </footer>                                    
-                                </article>
-                                <!-- Item #4 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-04.jpg" width="44" height="44" alt="Testimonial 04" />
-                                        <div>
-                                            <div class="font-bold">Michael Ross</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@michjack</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        Simple lives up to its name in every way. It's incredibly easy to use yet powerful enough to handle all my tasks effortlessly. It's become an essential part of my daily routine.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Jan 15, 2027</div>
-                                    </footer>                                    
-                                </article>
-                            </div>                
-                        </div>                     
-                    </div>
-                </div>
-            </section>
             
+
             <!-- CTA -->
             <section>                    
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -1017,7 +814,6 @@
                     </div>
                 </div>
             </section>
-            
         </main>
 
         <!-- Site footer -->
@@ -1039,7 +835,7 @@
                             </a>
                         </div>
                         <div class="text-sm text-gray-600">
-                            &copy; BaseFutura.com - All rights reserved.
+                            &copy; 2026 BaseFutura.com. All rights reserved.
                         </div>
                     </div>
 
@@ -1134,7 +930,7 @@
 
             <!-- Big text -->
             <div class="relative -mt-16 h-60 w-full -z-10" aria-hidden="true">              
-                <div class="absolute left-1/2 pointer-events-none -z-10 -translate-x-1/2 text-[348px] leading-none text-center font-bold before:content-['Simple'] before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:text-transparent before:bg-clip-text after:content-['Simple'] after:absolute after:inset-0 after:bg-gray-300/70 after:text-transparent after:bg-clip-text after:[text-shadow:0_1px_0_white] after:mix-blend-darken"></div>
+                <div class="absolute left-1/2 pointer-events-none -z-10 -translate-x-1/2 text-[348px] leading-none text-center font-bold before:content-['Futura'] before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:text-transparent before:bg-clip-text after:content-['Futura'] after:absolute after:inset-0 after:bg-gray-300/70 after:text-transparent after:bg-clip-text after:[text-shadow:0_1px_0_white] after:mix-blend-darken"></div>
                 <!-- Glow -->
                 <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3" aria-hidden="true">
                     <div class="w-56 h-56 rounded-full border-[20px] border-blue-700 blur-[80px] will-change-[filter]"></div>
