@@ -6,12 +6,16 @@
   "author": "Pasquale Vitiello",
   "license": "https://cruip.com/terms/",
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./css/style.css -o ./style.css --watch",
+    "tailwind": "npx @tailwindcss/cli -i ./css/style.css -o ./style.css --watch",
+    "server": "lite-server",
+    "dev": "npm run tailwind & npm run server",
     "build": "npx @tailwindcss/cli -i ./css/style.css -o ./style.css"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
-    "tailwindcss": "^4.0.0"
+    "concurrently": "^10.0.3",
+    "lite-server": "^2.6.1",
+    "tailwindcss": "^4.3.1"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13"
