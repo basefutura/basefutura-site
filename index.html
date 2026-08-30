@@ -21,9 +21,9 @@
 
     <!-- Page wrapper -->
     <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-
+        
         <!-- Site header -->
-        <header class="fixed top-2 md:top-6 w-full z-30">           
+        <header class="fixed top-2 md:top-6 w-full z-30 site-header is-hidden" x-data="{ open: false }" @scroll.window="open = false">           
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <div class="relative flex items-center justify-between gap-3 h-14 rounded-2xl px-3 backdrop-blur-xs bg-white/90 shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
 
@@ -144,7 +144,7 @@
                                 </p>
                                 <div class="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                                     <div class="relative max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="450">
-                                        <a class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group" href="#0">
+                                        <a class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group" href="#learn-more">
                                             <span class="relative inline-flex items-center">
                                                 Learn More
                                             </span>
@@ -211,7 +211,7 @@
 
                         <!-- Section header -->
                         <div class="max-w-3xl mx-auto text-center pb-16 md:pb-20">
-                            <h2 class="text-3xl md:text-4xl font-bold text-gray-200">Base Futura helps your teams work more efficiently together</h2>
+                            <h2 id="learn-more" class="text-3xl md:text-4xl font-bold text-gray-200">Base Futura helps your teams work more efficiently together</h2>
                         </div>
 
                         <!-- Planet -->
@@ -412,12 +412,6 @@
                             <li>
                                 <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Test Automation</a>
                             </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Our Methods</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Pricing & Plans</a>
-                            </li>
                         </ul>
                     </div>
 
@@ -431,15 +425,6 @@
                             <li>
                                 <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Diversity & Inclusion</a>
                             </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Blog</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Careers</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Financial statements</a>
-                            </li>
                         </ul>
                     </div>
 
@@ -449,9 +434,6 @@
                         <ul class="text-sm space-y-2">
                             <li>
                                 <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Terms of service</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Report a vulnerability</a>
                             </li>
                         </ul>
                     </div>
