@@ -216,3 +216,8 @@ layer(base);
 [x-cloak=""] {
     display: none;
 }
+
+/* Temporary hide header during site-build */
+.site-header.is-hidden {
+  display: none;
+}
